@@ -97,13 +97,18 @@ public class PlcNodeManager : CustomNodeManager2
     /// </summary>
     public FolderState CreateFolder(NodeState parent, string path, string name, NamespaceType namespaceType)
     {
+        return CreateFolder(parent, path, name, (int)namespaceType);
+    }
+
+    public FolderState CreateFolder(NodeState parent, string path, string name, int namespaceType)
+    {
         var existingFolder = parent?.FindChildBySymbolicName(SystemContext, name);
         if (existingFolder != null)
         {
             return (FolderState)existingFolder;
         }
 
-        ushort namespaceIndex = NamespaceIndexes[(int)namespaceType];
+        ushort namespaceIndex = NamespaceIndexes[namespaceType];
 
         var folder = new FolderState(parent)
         {
