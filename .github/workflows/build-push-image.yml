@@ -75,6 +75,10 @@ jobs:
                 architecture: arm
                 os: linux
                 variant: v7
+            - image: $IMAGE_WINDOWS
+              platform:
+                architecture: amd64
+                os: windows
           EOL
           
           cat opc-plc.yaml
@@ -83,6 +87,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/arm64/v8
           tags: "${{ steps.meta.outputs.image_linux_arm64 }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm64
           file: ${{ github.workspace }}/src/bin/publish/Release/linux-arm64/Dockerfile.linux-arm64v8
@@ -94,6 +99,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/amd64
           tags: "${{ steps.meta.outputs.image_linux_amd64 }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-x64
           file: ${{ github.workspace }}/src/bin/publish/Release/linux-x64/Dockerfile.linux-amd64
@@ -105,6 +111,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/arm/v7
           tags: "${{ steps.meta.outputs.image_linux_arm }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm
           file: ${{ github.workspace }}/src/bin/publish/Release/linux-arm/Dockerfile.linux-arm32v7
@@ -116,6 +123,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: windows/amd64
           tags: "${{ steps.meta.outputs.image_windows }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/win-x64
           file: ${{ github.workspace }}/src/bin/publish/Release/win-x64/Dockerfile.nanoserver-ltsc2022-amd64
