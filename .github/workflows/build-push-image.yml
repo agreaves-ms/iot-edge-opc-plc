@@ -23,7 +23,7 @@ jobs:
         
       - name: Build code
         run: |
-          ./tools/scripts/build.ps1 -Path . -Debug
+          pwsh ./tools/scripts/build.ps1 -Path . -Debug
         
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
