@@ -77,7 +77,7 @@ jobs:
                 variant: v7
             - image: $IMAGE_WINDOWS
               platform:
-                architecture: amd64:ltsc2022-amd64
+                architecture: amd64
                 os: windows
           EOL
           
