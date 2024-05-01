@@ -88,8 +88,8 @@ jobs:
         with:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_arm64 }}"
-          context: ./src/bin/publish/Release/linux-arm64
-          file: ./src/bin/publish/Release/Dockerfile.linux-arm64v8
+          context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm64
+          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-arm64v8
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -99,8 +99,8 @@ jobs:
         with:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_amd64 }}"
-          context: ./src/bin/publish/Release/linux-x64
-          file: ./src/bin/publish/Release/Dockerfile.linux-amd64
+          context: ${{ github.workspace }}/src/bin/publish/Release/linux-x64
+          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-amd64
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -110,8 +110,8 @@ jobs:
         with:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_arm }}"
-          context: ./src/bin/publish/Release/linux-arm
-          file: ./src/bin/publish/Release/Dockerfile.linux-arm32v7
+          context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm
+          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-arm32v7
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -121,8 +121,8 @@ jobs:
         with:
           push: true
           tags: "${{ steps.meta.outputs.image_windows }}"
-          context: ./src/bin/publish/Release/win-x64
-          file: ./src/bin/publish/Release/Dockerfile.nanoserver-ltsc2022-amd64
+          context: ${{ github.workspace }}/src/bin/publish/Release/win-x64
+          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.nanoserver-ltsc2022-amd64
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
