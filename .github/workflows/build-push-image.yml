@@ -89,7 +89,7 @@ jobs:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_arm64 }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm64
-          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-arm64v8
+          file: ${{ github.workspace }}/src/bin/publish/Release/linux-arm64/Dockerfile.linux-arm64v8
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -100,7 +100,7 @@ jobs:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_amd64 }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-x64
-          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-amd64
+          file: ${{ github.workspace }}/src/bin/publish/Release/linux-x64/Dockerfile.linux-amd64
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -111,7 +111,7 @@ jobs:
           push: true
           tags: "${{ steps.meta.outputs.image_linux_arm }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/linux-arm
-          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.linux-arm32v7
+          file: ${{ github.workspace }}/src/bin/publish/Release/linux-arm/Dockerfile.linux-arm32v7
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
@@ -122,7 +122,7 @@ jobs:
           push: true
           tags: "${{ steps.meta.outputs.image_windows }}"
           context: ${{ github.workspace }}/src/bin/publish/Release/win-x64
-          file: ${{ github.workspace }}/src/bin/publish/Release/Dockerfile.nanoserver-ltsc2022-amd64
+          file: ${{ github.workspace }}/src/bin/publish/Release/win-x64/Dockerfile.nanoserver-ltsc2022-amd64
           labels: |
             org.opencontainers.image.source=${{ steps.meta.outputs.source }}
             org.opencontainers.image.licenses=MIT
