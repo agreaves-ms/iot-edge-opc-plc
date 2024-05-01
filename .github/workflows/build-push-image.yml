@@ -131,5 +131,5 @@ jobs:
         run: |
           wget https://github.com/estesp/manifest-tool/releases/download/v2.1.5/binaries-manifest-tool-2.1.5.tar.gz -O binaries-manifest-tool-2.1.5.tar.gz
           tar zxvf binaries-manifest-tool-2.1.5.tar.gz
-          chmod +x manifest-tool-linux-amd64
-          ./manifest-tool-linux-amd64 push from-spec opc-plc.yaml
+          chmod +x manifest-tool-linux
+          ./manifest-tool-linux push from-spec opc-plc.yaml
