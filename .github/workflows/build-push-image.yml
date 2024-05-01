@@ -47,13 +47,13 @@ jobs:
           IMAGE_LINUX_ARM=$IMAGE:linux-arm32v7-$VERSION
           IMAGE_WINDOWS=$IMAGE:nanoserver-ltsc2022-amd64-$VERSION
           
-          echo "source=${{ github.server_url }}/${{ github.repository }}\n" >> $GITHUB_OUTPUT
-          echo "image_name=$IMAGE\n" >> $GITHUB_OUTPUT
-          echo "version=$VERSION\n" >> $GITHUB_OUTPUT
-          echo "image_linux_amd64=$IMAGE_LINUX_AMD64\n" >> $GITHUB_OUTPUT
-          echo "image_linux_arm64=$IMAGE_LINUX_ARM64\n" >> $GITHUB_OUTPUT
-          echo "image_linux_arm=$IMAGE_LINUX_ARM\n" >> $GITHUB_OUTPUT
-          echo "image_windows=$IMAGE_WINDOWS\n" >> $GITHUB_OUTPUT
+          echo "source=${{ github.server_url }}/${{ github.repository }}" >> $GITHUB_OUTPUT
+          echo "image_name=$IMAGE" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "image_linux_amd64=$IMAGE_LINUX_AMD64" >> $GITHUB_OUTPUT
+          echo "image_linux_arm64=$IMAGE_LINUX_ARM64" >> $GITHUB_OUTPUT
+          echo "image_linux_arm=$IMAGE_LINUX_ARM" >> $GITHUB_OUTPUT
+          echo "image_windows=$IMAGE_WINDOWS" >> $GITHUB_OUTPUT
           
           cat > opc-plc.yaml <<EOL
           image: $IMAGE:latest
@@ -78,6 +78,8 @@ jobs:
                 architecture: amd64:ltsc2022-amd64
                 os: windows
           EOL
+          
+          cat opc-plc.yaml
           
       - name: Docker Build and push linux arm64
         uses: docker/build-push-action@v5
